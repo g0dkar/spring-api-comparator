@@ -1,5 +1,6 @@
 package io.github.g0dkar.springApiComparator
 
+import org.apache.hc.core5.net.URIBuilder
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 

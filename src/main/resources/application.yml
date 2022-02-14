@@ -1,1 +1,3 @@
-hello: world
+apiComparator:
+  userAgent: "io.github.g0dkar.springApiComparator/1.0"
+
