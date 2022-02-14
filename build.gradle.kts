@@ -12,10 +12,13 @@ plugins {
     `java-library`
     `maven-publish`
     kotlin("jvm") version "1.6.10"
+    kotlin("plugin.spring") version "1.6.10"
     id("org.jetbrains.dokka") version "1.6.10"
     id("org.jlleitschuh.gradle.ktlint") version "10.0.0"
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
     id("org.sonarqube") version "3.3"
+    id("org.springframework.boot") version "2.6.3"
+    id("io.spring.dependency-management") version "1.0.11.RELEASE"
 }
 
 group = "io.github.g0dkar"
@@ -34,12 +37,24 @@ idea {
 }
 
 dependencies {
+    api("org.slf4j:slf4j-api")
+    api("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    api("com.fasterxml.jackson.module:jackson-module-kotlin")
+    api("com.google.guava:guava:31.0.1-jre")
+    api("org.apache.httpcomponents.client5:httpclient5-fluent:5.1.3")
+
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.2")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.8.2")
     testImplementation("io.kotest:kotest-assertions-core-jvm:5.1.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.rest-assured:rest-assured")
 }
 
 tasks {
