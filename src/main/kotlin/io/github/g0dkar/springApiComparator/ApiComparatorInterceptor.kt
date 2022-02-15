@@ -1,11 +1,10 @@
-package io.github.g0dkar.springApiComparator.components
+package io.github.g0dkar.springApiComparator
 
 import io.github.g0dkar.springApiComparator.annotation.CompareApi
 import io.github.g0dkar.springApiComparator.internal.ApiComparator
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.stereotype.Component
 import org.springframework.web.method.HandlerMethod
 import org.springframework.web.servlet.HandlerInterceptor
 import org.springframework.web.util.ContentCachingRequestWrapper
@@ -13,7 +12,6 @@ import org.springframework.web.util.ContentCachingResponseWrapper
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-@Component
 class ApiComparatorInterceptor(
     private val apiComparatorHttpClient: CloseableHttpClient,
     private val requestHolder: ThreadLocal<ContentCachingRequestWrapper> = ThreadLocal(),

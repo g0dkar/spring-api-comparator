@@ -5,13 +5,15 @@ import org.apache.hc.client5.http.impl.classic.CloseableHttpClient
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-@ComponentScan("io.github.g0dkar.springApiComparator.components")
 @ConfigurationPropertiesScan("io.github.g0dkar.springApiComparator.config")
-class LibConfig {
+class ApiComparatorConfig {
+    @Bean
+    fun apiComparatorInterceptor(apiComparatorHttpClient: CloseableHttpClient): ApiComparatorInterceptor =
+        ApiComparatorInterceptor(apiComparatorHttpClient)
+
     @Bean
     fun apiComparatorHttpClient(
         configs: Configs,

@@ -37,12 +37,11 @@ idea {
 }
 
 dependencies {
-    api("org.slf4j:slf4j-api")
-    api("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-    api("com.fasterxml.jackson.module:jackson-module-kotlin")
-    api("com.google.guava:guava:31.0.1-jre")
-    api("org.apache.httpcomponents.client5:httpclient5-fluent:5.1.3")
-
+    implementation("org.slf4j:slf4j-api")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.google.guava:guava:31.0.1-jre")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.1.3")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
