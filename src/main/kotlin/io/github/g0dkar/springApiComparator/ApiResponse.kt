@@ -6,6 +6,8 @@ import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse
 import org.apache.hc.core5.http.io.entity.EntityUtils
 import org.springframework.web.util.ContentCachingResponseWrapper
 import java.nio.charset.Charset
+import javax.servlet.http.HttpServletRequest
+import javax.servlet.http.HttpServletResponse
 
 data class ApiResponse(
     val code: Int,

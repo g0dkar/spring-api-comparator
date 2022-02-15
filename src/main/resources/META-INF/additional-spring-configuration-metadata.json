@@ -1,9 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "apiComparator.userAgent",
-      "type": "java.lang.String",
-      "description": "UserAgent header to be sent with requests sent by the API Comparator Library."
-    }
-  ]
-}
