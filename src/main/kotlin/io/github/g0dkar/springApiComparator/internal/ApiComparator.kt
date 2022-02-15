@@ -58,6 +58,8 @@ internal class ApiComparator(
             .toTypedArray()
 
         val uri = URIBuilder(baseURI).apply {
+            path = request.requestURI
+
             request.parameterMap.forEach { (key, value) ->
                 value.forEach {
                     queryParams.add(BasicNameValuePair(key, it))
